@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8" />  
+	<meta name=renderer content=webkit>
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<title>陆鹰前端社区</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css?!">
+	<link rel="stylesheet" type="text/css" href="css/style.css?!">
+	<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/jquery.movebg.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".nav,.nav_submenu,.move-bg").movebg({
+				width:120/*滑块的大小*/,
+				extra:30/*额外反弹的距离*/,
+				speed:300/*滑块移动的速度*/,
+				rebound_speed:400/*滑块反弹的速度*/
+			});
+			// 导航点击切换
+			$(".nav_list li").click(function(){
+				$(this).addClass("cur").siblings().removeClass("cur");
+			});
+			// 鼠标经过下拉
+			$(".nav li").mouseover(function(){
+				$(this).children(".nav_submenu").show();
+			});
+			$(".nav li").mouseout(function(){
+				$(this).children(".nav_submenu").hide();
+			});
+		});
+	</script>
+	<!--[if IE 6]>
+		<style type="text/css">
+			html{overflow:hidden}
+			body{height:100%;overflow:auto}
+			.nav_fixed{position:absolute;left:0px;}
+		</style>
+	<![endif]-->
+</head>
+<body>
+	
+	<!-- 头部 -->
+	<div class="header">
+		<span>陆鹰前端社区</span>
+	</div>
+	
+	<!-- 导航 -->
+	<div class="nav_nav1" id="fixed">
+		<div class="nav_nav">
+			<div class="nav" id="fixed">
+		        <ul class="nav_list">
+		            <li class="nav-item cur"><a href="index.html">网站首页</a></li>
+		            <li class="nav-item"><a href="#">干货分享</a></li>
+		            <li class="nav-item"><a href="#">API速查<i class="iconfont icon-jiantouxia"></i></a>
+						<div class="nav_submenu">
+							<dl>
+								<dd><a href="#">Jquery</a></dd>
+								<dd><a href="#">Javascript</a></dd>
+								<dd><a href="#">Css3</a></dd>
+								<dd><a href="#">Html5</a></dd>
+							</dl>
+						</div>
+		            </li>
+		            <li class="nav-item"><a href="#">在线工具<i class="iconfont icon-jiantouxia"></i></a>
+						<div class="nav_submenu">
+							<dl>
+								<dd><a href="#">子栏目</a></dd>
+								<dd><a href="#">子栏目</a></dd>
+								<dd><a href="#">子栏目</a></dd>
+								<dd><a href="#">子栏目</a></dd>
+							</dl>
+						</div>
+		            </li> 
+		            <li class="nav-item"><a href="#">微商城组件</a></li> 
+		            <li class="nav-item"><a href="#">常用插件<i class="iconfont icon-jiantouxia"></i></a>
+						<div class="nav_submenu">
+							<dl>
+								<dd><a href="#">子栏目</a></dd>
+								<dd><a href="#">子栏目</a></dd>
+								<dd><a href="#">子栏目</a></dd>
+								<dd><a href="#">子栏目</a></dd>
+							</dl>
+						</div>
+		            </li>
+		            <li class="nav-item"><a href="#">发帖</a></li>
+		        </ul>
+		        <!--移动的滑动-->
+		        <div class="move-bg"></div>
+
+			</div>
+		</div>
+	</div>
+	
+	<!-- 内容 -->
+	<div class="content">
+
+		<!-- 左 -->
+		<div class="content_left">
+
+			<div class="arc_list">
+				<h1><a href="#" title="">85微商城双旦活动设计源文件及H5页面</a></h1>
+				<span>作者：<a href="search.html">骆一鸣</a>   时间：2015年1月27日</span>
+				<div><img src="images/photo.jpg"></div>
+				<p>本站的各项电子服务的所有权和运作权归本站。本站提供的服务将完全按照其发布的服务条款和操作规则严格执行。您同意所有本站发布的服务条款和操作规则的约定</p>
+				<p>提到自由软件界 LTS 版本，不得不说 Ubuntu。Ubuntu 的策略是每两年发布一个 LTS 版本，其中桌面版可以获得3年的技术支持，服务器版可以获得5年的技术支持。这种发布方式对于开发者、使用者来讲就能在一定时间内保证自己在某个版本上的付出不会由于频繁的更新版本而变的疲于奔命。</p>
+				<p>说明中还提到：如果 Laravel 和 Symfony 发布 LTS 版本的步调一致，也就是每两年发布一次 LTS 版本，那么将会为每一个 Laravel LTS 版本提供3年的 bug 修复支持和4年的安全问题修复支持。</p>
+				<p>接下来的一两个月内还会有详细的信息被披露出来，这必定是一个非常重要也是非常令人激动的消息，对于广大开发者和采用 Laravel 的公司来说这将是对产品和代码的一个有力保障。</p>
+				<p>本站的各项电子服务的所有权和运作权归本站。本站提供的服务将完全按照其发布的服务条款和操作规则严格执行。您同意所有本站发布的服务条款和操作规则的约定</p>
+				<p>提到自由软件界 LTS 版本，不得不说 Ubuntu。Ubuntu 的策略是每两年发布一个 LTS 版本，其中桌面版可以获得3年的技术支持，服务器版可以获得5年的技术支持。这种发布方式对于开发者、使用者来讲就能在一定时间内保证自己在某个版本上的付出不会由于频繁的更新版本而变的疲于奔命。</p>
+				<p>说明中还提到：如果 Laravel 和 Symfony 发布 LTS 版本的步调一致，也就是每两年发布一次 LTS 版本，那么将会为每一个 Laravel LTS 版本提供3年的 bug 修复支持和4年的安全问题修复支持。</p>
+
+				<div class="bdsharebuttonbox">
+					<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+					<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+					<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+					<a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+					<a href="#" class="bds_fx" data-cmd="fx" title="分享到飞信"></a>
+				</div>
+				<div class="tag">
+					<i class="iconfont icon-biaoqian"></i>
+					<a href="#">规则</a>
+					<a href="#">产品和代码</a>
+					<a href="#">各项电子服务</a>
+				</div>
+				
+			</div>
+
+			<div class="author">
+				<a href="#"><img src="images/author.png"></a>
+				<div class="author_info">
+					<span><a href="search.html">张三先</a></span>
+					<p>当然了，LTS 版本也将消耗更多人力去维护各个版本，而大部分开源软件是做不到的，因此我们就会看到很多开源软件其实都成了“版本帝”。</p>
+				</div>
+			</div>
+
+			<div class="nextPage">
+				<ul>
+					<li>上一篇：<a href="#">有详细的信息被披露出来</a></li>
+					<li>下一篇：<a href="#">有详细的信息被披露出来，这必定有详细的信息被披露出来，这必定</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<!-- 右 -->
+		<div class="content_right">
+			
+			<!-- 动态 -->
+			<div class="news_right">
+				<div class="news_right_title">动态</div>
+				<span></span>
+				<div class="news_right_list">	
+					<ul>
+						<li>
+							<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等和剂局方回复回复大将风度很久很久好地方</a>
+							<p><span>武大郎</span>发起了提问</p>
+						</li>
+						<li>
+							<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等</a>
+							<p><span>武大郎</span>回复了问题</p>
+						</li>
+						<li>
+							<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等</a>
+							<p><span>武大郎</span>发起了提问</p>
+						</li>
+						<li>
+							<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等</a>
+							<p><span>武大郎</span>回复了问题</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- 标签 -->
+			<div class="news_right">
+				<div class="news_right_title">标签</div>
+				<span></span>
+				<div class="news_right_list">	
+					<dl>
+						<dt></dt>
+						<dd><a href="#">权限管理</a></dd>
+						<dd><a href="#">设计源文件</a></dd>
+						<dd><a href="#">权限</a></dd>
+						<dd><a href="#">双旦活动</a></dd>
+						<dd><a href="#">2015年1月27日</a></dd>
+						<dd><a href="#">设计源文件</a></dd>
+						<dd><a href="#">权限</a></dd>
+						<dd><a href="#">双旦活动</a></dd>
+						<dd><a href="#">2015年1月27日</a></dd>
+					</dl>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<!-- 底部 -->
+	<div class="footer">
+		
+		<div class="footer_top">
+			<div class="ft_left">
+				<div class="news_right ft_none">
+					<div class="news_right_title color_fff">动态</div>
+					<span style="left:0;"></span>
+					<div class="news_right_list ft_border">	
+						<ul>
+							<li>
+								<a href="#">请问larave权限管理怎么做！在线急等在权限管理怎么做！在线急等在线急等</a>
+								<p>2016年02月02日</p>
+							</li>
+							<li>
+								<a href="#">请问larave权限管理怎么做！在线急等</a>
+								<p>2016年02月02日</p>
+							</li>
+							<li>
+								<a href="#">请问larave权限管理怎么做！在线急等</a>
+								<p>2016年02月02日</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ft_mid">
+				<div class="news_right ft_none">
+					<div class="news_right_title color_fff">标签</div>
+					<span style="left:0;"></span>
+					<div class="news_right_list ft_border">	
+						<dl>
+							<dt></dt>
+							<dd><a href="#">权限管理</a></dd>
+							<dd><a href="#">设计源文件</a></dd>
+							<dd><a href="#">权限</a></dd>
+							<dd><a href="#">双旦活动</a></dd>
+							<dd><a href="#">2015年1月27日</a></dd>
+							<dd><a href="#">设计源文件</a></dd>
+							<dd><a href="#">权限</a></dd>
+							<dd><a href="#">双旦活动</a></dd>
+							<dd><a href="#">2015年1月27日</a></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="ft_right">
+				<div class="news_right ft_none">
+					<div class="news_right_title color_fff">合作伙伴</div>
+					<span style="left:0;"></span>
+					<div class="news_right_list ft_no_border">	
+						<dl>
+							<dt></dt>
+							<dd><a href="#">中国移动通信</a></dd>
+							<dd><a href="#">中移在线股份有限公司</a></dd>
+							<dd><a href="#">商城</a></dd>
+							<dd><a href="#">中国移动通信</a></dd>
+							<dd><a href="#">中移在线</a></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer_bottom">版权所有 10085</div>
+
+	</div>
+	
+	<!-- 返回顶部 -->
+	<script type="text/javascript" src="js/backtop.js"></script>
+	<!-- 导航跟随固定 --> 
+	<script type="text/javascript">
+		var offs=$('#fixed').offset();
+		$(window).scroll(function(){
+			scrollLis();
+		});
+
+		// 分享
+		window._bd_share_config= {
+		"common"
+			:{"bdSnsKey": {
+		},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"
+		},"share": {
+		}};
+		with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+	</script>
+</body>
+</html>
