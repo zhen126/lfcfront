@@ -706,7 +706,8 @@ a:hover{
 .hasbeen a{
 	color: #f4645f !important;
 }
-#boxTag span{cursor:pointer;padding:3px 8px; background:#eee;border:1px solid #999;float:left; margin-right:5px;margin-bottom:10px; }
+#boxTag span{cursor:pointer;padding:3px 5px; background:#eee;border:1px solid #999;float:left; margin-right:5px;margin-bottom:5px; }
 .clear:after{
 content:"";display:block;overflow:hidden;clear:both;
 }
+#boxTag .close{margin-left: 3px;}
