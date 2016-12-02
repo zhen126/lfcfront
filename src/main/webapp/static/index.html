@@ -10,36 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css?!">
 	<link rel="stylesheet" type="text/css" href="css/style.css?!">
 	<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script src="js/jquery.movebg.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$(".nav,.nav_submenu,.move-bg").movebg({
-				width:120/*滑块的大小*/,
-				extra:20/*额外反弹的距离*/,
-				speed:300/*滑块移动的速度*/,
-				rebound_speed:400/*滑块反弹的速度*/
-			});
-			// 导航点击切换
-			$(".nav_list li").click(function(){
-				$(this).addClass("cur").siblings().removeClass("cur");
-			});
-			// 鼠标经过下拉
-			$(".nav li").mouseover(function(){
-				$(this).children(".nav_submenu").show();
-			});
-			$(".nav li").mouseout(function(){
-				$(this).children(".nav_submenu").hide();
-			});
-		});
-	</script>
-	<!--[if IE 6]>
-		<style type="text/css">
-			html{overflow:hidden}
-			body{height:100%;overflow:auto}
-			.nav_fixed{position:absolute;left:0px;}
-		</style>
-	<![endif]-->
+
 </head>
 <body>
 	
@@ -107,6 +78,8 @@
 				<div><img src="images/photo.jpg"></div>
 				<p>本站的各项电子服务的所有权和运作权归本站。本站提供的服务将完全按照其发布的服务条款和操作规则严格执行。您同意所有本站发布的服务条款和操作规则的约定</p>
 				<button><a href="arc_info.html">查看更多</a></button>
+				<button class="deletes">删除</button>
+				
 			</div>
 
 			<div class="arc_list">
@@ -266,7 +239,14 @@
 
 	</div>
 	
-	<!-- 返回顶部 -->
+
+</body>
+  <script src="js/jquery.min.js"></script>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  	<script src="js/jquery.movebg.js"></script>
+  <script src="http://mockjs.com/dist/mock.js"></script>
+
+  	<!-- 返回顶部 -->
 	<script type="text/javascript" src="js/backtop.js"></script>
 	<!-- 导航跟随固定 --> 
 	<script type="text/javascript">
@@ -276,5 +256,27 @@
 		});
 	</script>
 
-</body>
+  	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".nav,.nav_submenu,.move-bg").movebg({
+				width:120/*滑块的大小*/,
+				extra:20/*额外反弹的距离*/,
+				speed:300/*滑块移动的速度*/,
+				rebound_speed:400/*滑块反弹的速度*/
+			});
+			// 导航点击切换
+			$(".nav_list li").click(function(){
+				$(this).addClass("cur").siblings().removeClass("cur");
+			});
+			// 鼠标经过下拉
+			$(".nav li").mouseover(function(){
+				$(this).children(".nav_submenu").show();
+			});
+			$(".nav li").mouseout(function(){
+				$(this).children(".nav_submenu").hide();
+			});
+		});
+	</script>
+	  <script type="text/javascript" src="js/indexlist.js"></script>
+  
 </html>
