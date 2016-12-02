@@ -250,7 +250,7 @@ a:hover{
 	border-bottom:solid 1px #ebebeb;
 	font-size: 2.2rem;
 	color:#303030;
-	line-height: 3.5rem;
+	line-height: 3.5rem; margin-bottom: 10px;
 }
 .news_right_list ul li{
 	border-bottom:solid 1px #ebebeb;
@@ -706,8 +706,24 @@ a:hover{
 .hasbeen a{
 	color: #f4645f !important;
 }
-#boxTag span{cursor:pointer;padding:3px 5px; background:#eee;border:1px solid #999;float:left; margin-right:5px;margin-bottom:5px; }
+#boxTag span{cursor:pointer;padding:3px 5px;  background:#eee;float:left; margin-right:5px;margin-bottom:5px; }
 .clear:after{
 content:"";display:block;overflow:hidden;clear:both;
 }
+#boxTag *{color: #fff;}
 #boxTag .close{margin-left: 3px;}
+#boxTag span.tagbg0{background-color: #E8714F;}
+#boxTag span.tagbg1{background-color: #30bbb8;}
+#boxTag span.tagbg2{background-color: #c65bff;}
+#boxTag span.tagbg3{background-color: #2ECB2E;}
+#boxTag span.tagbg4{background-color: #ED3968;}
+#boxTag span.tagbg5{background-color: #424AC1;}
+#boxTag span.tagbg6{background-color: #C4D02B;}
+#boxTag span:hover{-webkit-transition: all .3s;
+-o-transition: all .3s;
+transition: all .3s; background-color: #2C36C9;}
+#txtTag{width:140px;line-height:20px;padding:0px;border:1px solid #999;}
+#addTagBtn{background-color:#e6554e; border:0 none;line-height:20px;
+cursor:pointer; color:#fff; border-radius:2px;
+}
+.tag-tip{line-height:24px;}
