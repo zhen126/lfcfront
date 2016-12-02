@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script src="js/jquery.movebg.js"></script>
 	<script src="js/lib/mock.js"></script>
-	<script src="js/lib/mock_arcinfo.js"></script>
+	<script src="js/mock_arcinfo.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(".nav,.nav_submenu,.move-bg").movebg({
@@ -32,35 +32,6 @@
 			});
 			$(".nav li").mouseout(function(){
 				$(this).children(".nav_submenu").hide();
-			});
-		});
-		
-		
-		//文章详情部分
-		$(document).ready(function(){
-			$(window).load(function(){
-				//Ajax获取mock模拟数据
-				$.ajax({
-					type:"post",
-					url:"http://localhost:8080/lfcfront/postDetail",
-					data:"postId=198",
-					async:true,
-					dataType:"json",
-					success:function(res){
-						var arr = res.postId;
-						var commentList  = arr.comments.commentsList;
-						var arclist = $(".arc_list");
-						var author = $(".author_info");
-						//文章详情
-						arclist.find("h1").html(arr.title);//标题
-						arclist.find("span a").html(arr.author);//作者
-						arclist.find("span i").html(arr.time);//发布时间
-						arclist.find("p").html(arr.content);//文章内容
-						//评论详情
-						author.find("span a").html(commentList.c_author);//作者
-						author.find("p").html(commentList.comment);//评论内容
-					}
-				});
 			});
 		});
 	</script>
