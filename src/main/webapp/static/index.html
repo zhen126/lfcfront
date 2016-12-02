@@ -45,8 +45,6 @@
 	
 	<!-- 头部 -->
 	@@include('include/header.html')
-	</div>
-	
 	<!-- 内容 -->
 	<div class="content">
 
@@ -100,59 +98,12 @@
 		</div>
 
 		<!-- 右 -->
-		<div class="content_right">
-			
-			<!-- 动态 -->
-			<div class="news_right">
-				<div class="news_right_title">动态</div>
-				<span></span>
-				<div class="news_right_list">	
-					<ul>
-						<li>
-							<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等和剂局方回复回复大将风度很久很久好地方</a>
-							<p><span>武大郎</span>发起了提问</p>
-						</li>
-						<li>
-							<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等</a>
-							<p><span>武大郎</span>回复了问题</p>
-						</li>
-						<li>
-							<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等</a>
-							<p><span>武大郎</span>发起了提问</p>
-						</li>
-						<li>
-							<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等</a>
-							<p><span>武大郎</span>回复了问题</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-			
-			<!-- 标签 -->
-			<div class="news_right">
-				<div class="news_right_title">标签</div>
-				<span></span>
-				<div class="news_right_list">	
-					<dl>
-						<dt></dt>
-						<dd><a href="#">权限管理</a></dd>
-						<dd><a href="#">设计源文件</a></dd>
-						<dd><a href="#">权限</a></dd>
-						<dd><a href="#">双旦活动</a></dd>
-						<dd><a href="#">2015年1月27日</a></dd>
-						<dd><a href="#">设计源文件</a></dd>
-						<dd><a href="#">权限</a></dd>
-						<dd><a href="#">双旦活动</a></dd>
-						<dd><a href="#">2015年1月27日</a></dd>
-					</dl>
-				</div>
-			</div>
-
-		</div>
+		@@include('include/aside.html')
 	</div>
 	
 	<!-- 底部 -->
 	@@include('include/footer.html')
+	
 	<!-- 返回顶部 -->
 	<script type="text/javascript" src="js/backtop.js"></script>
 	<!-- 导航跟随固定 --> 

@@ -1,6 +1,7 @@
 
 var gulp = require('gulp'),
     //压缩html
+    cheerio = require('gulp-cheerio'),
     htmlmin = require('gulp-minify-html'),
     //压缩js
     uglify = require('gulp-uglify'),
@@ -8,6 +9,7 @@ var gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
     //复制文件
     flatten = require('gulp-flatten'),
+
     //提取公共代码
     fileinclude  = require('gulp-file-include');
 //提起公共代码
