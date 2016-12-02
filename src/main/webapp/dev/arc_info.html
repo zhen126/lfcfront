@@ -36,9 +36,27 @@
 		});
 		
 		
-		//文章详情.
+		//文章详情部分
 		$(document).ready(function(){
-			
+			$(window).load(function(){
+				//Ajax获取mock模拟数据
+				$.ajax({
+					type:"post",
+					url:"http://localhost:8080/lfcfront/postDetail",
+					data:"postId=198",
+					async:true,
+					dataType:"json",
+					success:function(res){
+						var arr = res.postId;
+						//console.log(arr);
+						var arclist = $(".arc_list");
+						arclist.find("h1").html(arr.title);//标题
+						arclist.find("span a").html(arr.author);//作者
+						arclist.find("span i").html(arr.time);//发布时间
+						arclist.find("p").html(arr.content);//文章内容
+					}
+				});
+			});
 		});
 	</script>
 	<!--[if IE 6]>
@@ -110,16 +128,16 @@
 		<div class="content_left">
 
 			<div class="arc_list">
-				<h1><a href="#" title="">85微商城双旦活动设计源文件及H5页面</a></h1>
-				<span>作者：<a href="search.html">骆一鸣</a>   时间：2015年1月27日</span>
+				<h1><a href="#" title=""></a></h1>
+				<span>作者：<a href="search.html"></a>&nbsp;<i style="font-style: normal;"></i></span>
 				<div><img src="images/photo.jpg"></div>
-				<p>本站的各项电子服务的所有权和运作权归本站。本站提供的服务将完全按照其发布的服务条款和操作规则严格执行。您同意所有本站发布的服务条款和操作规则的约定</p>
-				<p>提到自由软件界 LTS 版本，不得不说 Ubuntu。Ubuntu 的策略是每两年发布一个 LTS 版本，其中桌面版可以获得3年的技术支持，服务器版可以获得5年的技术支持。这种发布方式对于开发者、使用者来讲就能在一定时间内保证自己在某个版本上的付出不会由于频繁的更新版本而变的疲于奔命。</p>
-				<p>说明中还提到：如果 Laravel 和 Symfony 发布 LTS 版本的步调一致，也就是每两年发布一次 LTS 版本，那么将会为每一个 Laravel LTS 版本提供3年的 bug 修复支持和4年的安全问题修复支持。</p>
-				<p>接下来的一两个月内还会有详细的信息被披露出来，这必定是一个非常重要也是非常令人激动的消息，对于广大开发者和采用 Laravel 的公司来说这将是对产品和代码的一个有力保障。</p>
-				<p>本站的各项电子服务的所有权和运作权归本站。本站提供的服务将完全按照其发布的服务条款和操作规则严格执行。您同意所有本站发布的服务条款和操作规则的约定</p>
-				<p>提到自由软件界 LTS 版本，不得不说 Ubuntu。Ubuntu 的策略是每两年发布一个 LTS 版本，其中桌面版可以获得3年的技术支持，服务器版可以获得5年的技术支持。这种发布方式对于开发者、使用者来讲就能在一定时间内保证自己在某个版本上的付出不会由于频繁的更新版本而变的疲于奔命。</p>
-				<p>说明中还提到：如果 Laravel 和 Symfony 发布 LTS 版本的步调一致，也就是每两年发布一次 LTS 版本，那么将会为每一个 Laravel LTS 版本提供3年的 bug 修复支持和4年的安全问题修复支持。</p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
 
 				<div class="bdsharebuttonbox">
 					<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
