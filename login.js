@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-  Mock.mock("http://127.0.0.1:8020/list/",{
+  Mock.mock("http://localhost:8080/lfcfront/login",{
     'state': 0
   });
   
@@ -12,25 +12,25 @@ $(document).ready(function () {
       userName: $('#username').val(), 
       userPwd: $('#password').val()
     };
-    if (userName == "") {
+    if (!userName) {
       alert("用户名不能为空！");
     }
-    else if (userPwd == "") {
+    else if (!userPwd) {
       alert("密码不能为空！");
     }
     else {
       //提交数据给Login.ashx页面处理 
       $.ajax({
-        url: 'http://127.0.0.1:8020/list/',
+        url: 'http://localhost:8080/lfcfront/login',
         dataType:'json'
       }).done(function(data, status, xhr){
         var state = data.state;
         console.log(state);
-        if(state == 0) {
+        if(state === 0) {
           alert("登录成功");
-        }else if(state == 1){
+        }else if(state === 1){
           alert("用户名或密码错误");
-        }else if(state == -1){
+        }else if(state === -1){
           alert("系统错误");
         }
       });
