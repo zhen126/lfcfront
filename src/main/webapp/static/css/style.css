@@ -136,6 +136,10 @@ a:hover{
 	color: #333;
 	border-bottom: solid 1px #e1e1e1 !important;
 	font-size:1.2rem;
+	word-break:keep-all;           /* 不换行 */
+	white-space:nowrap;          /* 不换行 */
+	overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis; 
 }
 .nav_submenu dl dd a:hover{
 	padding:0;
