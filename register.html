@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css?!">
+	<link rel="stylesheet" type="text/css" href="../css/style.css?!">
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	  <div class="login">
+			<h2>陆鹰 <strong>前端知识库</strong></h2>
+			
+			<div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  请输入正确的用户名
+			</div>
+
+			<div class="form-group">
+          <input class="form-control" placeholder="请输入用户名" id="username" name="username" type="email" autofocus="">
+      </div>
+      <!--
+      <div class="form-group">
+          <input class="form-control" placeholder="请输入邮箱" id="username" name="username" type="email" autofocus="">
+      </div>
+      -->
+      <div class="form-group">
+          <input class="form-control" placeholder="请输入密码" id="password" name="password" type="password" value="">
+      </div>
+      <div class="form-group">
+          <input class="form-control" placeholder="请再次输入密码" id="password" name="password" type="password" value="">
+      </div>
+      <div class="input-group">
+        <input type="text" class="form-control" id="code" placeholder="验证码" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2"><a href="#"><img src="../img/yzm.png" width="50"></a></span>
+      </div>
+      
+      <button type="submit" class="btn btn-lg btn-success btn-block" id="submitBtn">创建账号</button>
+      <a class="btn btn-sm btn-primary btn-block" href="login.html">已有账号，请登录</a>
+	  </div>
+
+	  <script src="../js/common/jquery.min.js"></script>
+    <script src="../js/common/mock-min.js"></script>
+	  <script src="../js/common/bootstrap.min.js"></script>
+    <script src="../js/lib/register.js"></script>
+  </body>
+</html>
