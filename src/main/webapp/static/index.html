@@ -26,10 +26,11 @@
 			});
 			// 鼠标经过下拉
 			$(".nav li").mouseover(function(){
+				$(".nav li").children(".nav_submenu").hide();
 				$(this).children(".nav_submenu").show();
 			});
-			$(".nav li").mouseout(function(){
-				$(this).children(".nav_submenu").hide();
+			$(".nav_submenu").mouseout(function(){
+				$(this).hide();
 			});
 		});
 	</script>
