@@ -48,12 +48,17 @@
 					dataType:"json",
 					success:function(res){
 						var arr = res.postId;
-						//console.log(arr);
+						var commentList  = arr.comments.commentsList;
 						var arclist = $(".arc_list");
+						var author = $(".author_info");
+						//文章详情
 						arclist.find("h1").html(arr.title);//标题
 						arclist.find("span a").html(arr.author);//作者
 						arclist.find("span i").html(arr.time);//发布时间
 						arclist.find("p").html(arr.content);//文章内容
+						//评论详情
+						author.find("span a").html(commentList.c_author);//作者
+						author.find("p").html(commentList.comment);//评论内容
 					}
 				});
 			});
