@@ -26,10 +26,11 @@
 			});
 			// 鼠标经过下拉
 			$(".nav li").mouseover(function(){
+				$(".nav li").children(".nav_submenu").hide();
 				$(this).children(".nav_submenu").show();
 			});
-			$(".nav li").mouseout(function(){
-				$(this).children(".nav_submenu").hide();
+			$(".nav_submenu").mouseout(function(){
+				$(this).hide();
 			});
 		});
 	</script>
@@ -58,20 +59,21 @@
 		            <li class="nav-item"><a href="#">API速查<i class="iconfont icon-jiantouxia"></i></a>
 						<div class="nav_submenu">
 							<dl>
-								<dd><a href="#">Jquery</a></dd>
-								<dd><a href="#">Javascript</a></dd>
-								<dd><a href="#">Css3</a></dd>
-								<dd><a href="#">Html5</a></dd>
+								<dd><a href="http://www.css88.com/jqapi-1.9" target="_blank">Jquery</a></dd>
+								<dd><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference">Javascript</a></dd>
+								<dd><a href="http://css.doyoe.com">Css3</a></dd>
+								<dd><a href="http://code.ciaoca.com/html/htmltags">Html5</a></dd>
 							</dl>
 						</div>
 		            </li>
 		            <li class="nav-item"><a href="#">在线工具<i class="iconfont icon-jiantouxia"></i></a>
 						<div class="nav_submenu">
 							<dl>
-								<dd><a href="#">子栏目</a></dd>
-								<dd><a href="#">子栏目</a></dd>
-								<dd><a href="#">子栏目</a></dd>
-								<dd><a href="#">子栏目</a></dd>
+								<dd><a href="http://css3generator.com" title="CSS3 代码生成器">CSS3 代码生成器</a></dd>
+								<dd><a href="http://code.ciaoca.com/style/bubble" title="CSS3 气泡对话框生成器">CSS3 气泡对话框生成器</a></dd>
+								<dd><a href="http://tool.css-js.com" title="JS代码在线压缩">JS代码在线压缩</a></dd>
+								<dd><a href="http://www.css88.com/tool/jQuerySourceViewer" title="jQuery源代码查看工具（English）">jQuery源代码查看工具（English）</a></dd>
+								<dd><a href="http://code.ciaoca.com">更多</a></dd>
 							</dl>
 						</div>
 		            </li> 
@@ -79,10 +81,12 @@
 		            <li class="nav-item"><a href="#">常用插件<i class="iconfont icon-jiantouxia"></i></a>
 						<div class="nav_submenu">
 							<dl>
-								<dd><a href="#">子栏目</a></dd>
-								<dd><a href="#">子栏目</a></dd>
-								<dd><a href="#">子栏目</a></dd>
-								<dd><a href="#">子栏目</a></dd>
+								<dd><a href="http://code.ciaoca.com/jquery/animate-colors" title="Color animation色彩动画扩展">Color animation色彩动画扩展</a></dd>
+								<dd><a href="http://code.ciaoca.com/jquery/lazyload" title="Lazy Load图片延迟加载">Lazy Load图片延迟加载</a></dd>
+								<dd><a href="http://code.ciaoca.com/jquery/lightbox" title="Light Box 灯箱效果">Light Box 灯箱效果</a></dd>
+								<dd><a href="http://code.ciaoca.com/jquery/cxMenu" title="cxMenu 垂直多级滑动导航">cxMenu 垂直多级滑动导航</a></dd>
+								<dd><a href="http://code.ciaoca.com/jquery/cxCalendar" title="cxCalendar 日历选择器">cxCalendar 日历选择器</a></dd>
+								<dd><a href="http://code.ciaoca.com">更多</a></dd>
 							</dl>
 						</div>
 		            </li>
