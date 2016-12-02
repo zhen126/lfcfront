@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
   Mock.mock("http://localhost:8080/lfcfront/login",{
-    'state': 0
+    'state' : 0
   });
   
   $("#submitBtn").click(function () {

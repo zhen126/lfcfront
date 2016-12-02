@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	Mock.mock("http://localhost:8080/lfcfront/checkUser",{
-	    'state': 1
+	    'state' : 1
 	});
 	Mock.mock("http://localhost:8080/lfcfront/checkUser",{
-	    'state': 0
+	    'state' : 0
 	});
 	$("#username").blur(function(){
 		//验证是否存在；
