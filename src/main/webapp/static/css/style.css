@@ -167,6 +167,7 @@ a:hover{
 	margin-bottom:20px;
 	box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
 	padding:30px;
+	overflow:hidden;
 }
 .arc_list h1{
 	text-align: center;
@@ -206,10 +207,25 @@ a:hover{
 	font-size:1.6rem;
 }
 .arc_list p{
+	text-indent:2em;
 	line-height: 2.5rem;
+	/*height: 10rem;*/
 	color: #3f3f3f;
 	font-size:1.6rem;
 	margin:20px 0;
+	overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.arc_list .haveimgp{
+	height: 90px;
+    -webkit-line-clamp: 3;
+}
+.arc_list .nohaveimgp{
+	  -webkit-line-clamp: 5;
+	  height: 150px;
 }
 .arc_list button{
 	background: #f4645f;
@@ -223,11 +239,22 @@ a:hover{
 .arc_list button a{
 	color: #fff;
 	display: inline-block;
+
 }
 .arc_list button:hover{
 	background: #d94a45;
 	cursor: pointer;
 }
+.arc_list .deletes{
+	background: red;
+	float: right;
+}
+.pagelist ul a{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
 
 /* 右-动态 */
 .content_right{
@@ -311,16 +338,21 @@ a:hover{
 	left:50%;
 	margin-left:-21rem;
 }
-.pagelist ul li{
+.pagelist ul li,.pagelist ul div{
 	float: left;
 	background: #f4645f;
+	width: 30px;
+	height: 40px;
 	margin:0 5px;
-	padding:10px 5px;
+	line-height: 40px;
 	border-radius: 2px;
 	color: #fff;
 	font-size: 1.4rem;
 	cursor: pointer;
-	min-width:20px;
+	 
+}
+.pagelist ul div a{
+	color: white;
 }
 .pagelist ul li a{
 	color: #fff;
@@ -394,6 +426,53 @@ a:hover{
 .ft_no_border dl dd a:hover{
 	background: none;
 	border:0;
+}
+/*蒙板*/
+.mengban{
+	position: fixed;
+			left: 0px;
+			top: 0px;
+			bottom: 0px;
+			right: 0px;
+			background: rgba(0,0,0,0.2);
+}
+.mengban button{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: 100px;
+	height: 50px;
+	display: inline-block;
+	background: deepskyblue;
+	color: white;
+	border: 0;
+	outline: none;
+	border-radius: 5px;
+	font-size: 19px;
+	
+	
+}
+.mengban .mengbanin{
+	      position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -115px 0 0 -350px;
+			background: white;
+			width: 700px;
+			height: 235px;
+			border: 3px solid grey;
+			border-radius: 8px;
+			box-shadow: 10px black;
+			box-shadow: 0px 0px 10px black;
+			-webkit-box-shadow: 0px 0px 10px black;
+			text-align: center;
+			line-height: 235px;
+			font-size: 19px;
+}
+.mengban .mengbanin img{
+	position: absolute;
+	right: 10px;
+	top: 10px;
 }
 
 /* 返回顶部 */

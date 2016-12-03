@@ -6,5 +6,6 @@ public class Test {
 	public static void main(String[] args) {
 		JSON json =JSON.parseObject("{}");
 		System.out.println(json);
+		System.out.println(json);
 	}
 }
