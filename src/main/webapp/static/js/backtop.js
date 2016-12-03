@@ -5,7 +5,7 @@ var scrolltotop={
 		scrollto:0, //滚动到指定位置
 		scrollduration:500, //滚动过渡时间
 		fadeduration:[500,100] //淡出淡现消失
-	},
+	}, 
 	controlHTML:'<div class="icons-s-top"><i class="iconfont icon-jiantou"></i></div>', //返回顶部按钮
 	controlattrs:{offsetx:"31%",offsety:520},//返回按钮固定位置
 	anchorkeyword:"#top",
