@@ -1,0 +1,11 @@
+.posts_content{    
+    height: 5rem;
+    text-overflow: ellipsis;   
+    overflow: hidden;  
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; 
+  }
+  .arc_list .posts_time{
+  	color:  #959595;
+  }
