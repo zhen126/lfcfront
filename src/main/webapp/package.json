@@ -1,56 +1,29 @@
 {
-  "name": "sass-base",
-  "version": "1.0.0",
-  "description": "sass-base",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^3.9.0",
-    "sprity": "^1.0.7"
-  },
+  "name": "gulp-project",
+  "version": "0.1.0",
+  "description": "test",
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-cache": "^0.3.0",
+    "gulp": "~3.8.8",
     "gulp-cheerio": "^0.6.2",
     "gulp-clean": "^0.3.1",
-    "gulp-compass": "^2.1.0",
-    "gulp-debug": "^2.1.2",
-    "gulp-file-include": "^0.13.7",
-    "gulp-filter": "^3.0.1",
-    "gulp-flatten": "^0.3.1",
+    "gulp-compass": "^2.0.3",
+    "gulp-concat": "^2.5.2",
+    "gulp-copy": "0.0.2",
+    "gulp-file-include": "^1.0.0",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-if": "^1.2.5",
-    "gulp-imagemin": "^2.3.0",
-    "gulp-jshint": "^",
-    "gulp-minify-css": "^1.2.1",
-    "gulp-minify-html": "^1.0.4",
-    "gulp-plumber": "^1.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
-    "gulp-rev": "^6.0.1",
-    "gulp-rev-all": "^0.8.21",
-    "gulp-sequence": "^0.4.1",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^1.3.3",
+    "gulp-sftp": "^0.1.4",
     "gulp-tinypng": "^1.0.2",
-    "gulp-uglify": "^1.4.1",
-    "gulp-useref": "^1.3.0",
-    "gulp-util": "^3.0.0",
-    "gulp.spritesmith": "^4.1.0",
-    "imagemin-pngquant": "^4.2.0",
-    "sprity": "^1.0.7"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/huangyida/sass-base.git"
-  },
-  "keywords": [
-    "sass-base"
-  ],
-  "author": "sassplus",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/huangyida/sass-base/issues"
-  },
-  "homepage": "https://github.com/huangyida/sass-base#readme"
+    "gulp-uglify": "^1.1.0",
+    "gulp-webserver": "^0.9.0",
+    "gulp-zip": "^2.0.3",
+    "imagemin-pngquant": "^4.0.0",
+    "opn": "^1.0.1",
+    "tiny-lr": "^0.1.5"
+  }
 }
