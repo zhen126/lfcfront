@@ -18,10 +18,9 @@ Mock.mock("http://localhost:8080/lfcfront/postDetail",{
 						}
 					]
 });
-
 //文章详情部分
 $(document).ready(function(){
-	//Ajax获取mock模拟数据
+	//Ajax获取mock模拟数据.
 	var param = {
 		postId:192
 	}
@@ -38,13 +37,13 @@ $(document).ready(function(){
 				var arclist = $(".arc_list");
 				var author = $(".author_info");
 				//文章详情
-				arclist.find("h1").html(arr.title);//标题
-				arclist.find("span a").html(arr.author);//作者
-				arclist.find("span i").html(arr.time);//发布时间
-				arclist.find("p").html(arr.content);//文章内容
+				arclist.find("h1").html(arr.title);
+				arclist.find("span a").html(arr.author);
+				arclist.find("span i").html(arr.time);
+				arclist.find("p").html(arr.content);
 				//评论详情
-				author.find("span a").html(commentList.c_author);//作者
-				author.find("p").html(commentList.comment);//评论内容
+				author.find("span a").html(commentList.c_author);
+				author.find("p").html(commentList.comment);
 			}else{
 				alert("没有相关信息");
 			}
