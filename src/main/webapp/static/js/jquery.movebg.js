@@ -27,7 +27,7 @@
 			});
 		});
 		_this.mouseleave(function(){
-			cur=origin;/*鼠标离开导航时当前滑动值等于最初滑块值 哈哈哈*/
+			cur=origin;/*鼠标离开导航时当前滑动值等于最初滑块值*/
 			move();
 			if(hidden==1){_mover.stop().fadeOut();}/*当html中没有规定cur时在鼠标移出导航后消失*/
 		});
