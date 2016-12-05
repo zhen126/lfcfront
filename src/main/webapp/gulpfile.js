@@ -14,16 +14,16 @@ var lr = require('tiny-lr'),
 
 //压缩javascript 文件，压缩后文件放入dist/js下
 gulp.task('minifyjs',function(){
-    gulp.src('./dev/js/*.js')
+    gulp.src('./dev/js/**/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('./dist/js'))
 });
 //压缩css
 gulp.task('minifycss',function () {
-    gulp.src('dev/css/*.css')
+    gulp.src('dev/css/**/*.css')
         .pipe(minifyCss())
         .pipe(gulp.dest('./dist/css'))
-})
+});
 //压缩html  合并公共代码
 gulp.task('htmlmin', function() {
     var options = {
@@ -37,7 +37,7 @@ gulp.task('htmlmin', function() {
         minifyCSS: true  //压缩页面CSS
     };
     // 适配static中所有文件夹下的所有html，排除static下的include文件夹中html
-    gulp.src(['dev/*.html','!dev/include/**.html'])
+    gulp.src(['dev/**/*.html','!dev/include/**.html'])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
@@ -62,10 +62,14 @@ gulp.task('openbrowser', function() {
 });
 
 //将相关项目文件复制到build 文件夹下
-gulp.task('copyimages', function() {
+gulp.task('copy', function() {
     //根目录文件
     gulp.src('./dev/images/*')
         .pipe(gulp.dest('./dist/images'));
+    gulp.src('./dev/data/**/*')
+        .pipe(gulp.dest('./dist/data'));
+    gulp.src('./dev/font/**/*')
+        .pipe(gulp.dest('./dist/font'))
 });
 
 //文件监控
@@ -82,10 +86,7 @@ gulp.task('watch', function () {
             }
         });
     });
-
 });
-
-
 //默认任务
 gulp.task('default', function(){
     console.log('Starting Gulp tasks, enjoy coding!');
@@ -94,4 +95,4 @@ gulp.task('default', function(){
     // gulp.run('openbrowser');
 });
 //打包
-gulp.task('build',['copyimages','htmlmin','minifycss','minifyjs'])
+gulp.task('build',['copy','htmlmin','minifycss','minifyjs']);
