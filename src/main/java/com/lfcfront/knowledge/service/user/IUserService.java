@@ -41,4 +41,10 @@ public interface IUserService {
 	 * @return
 	 */
 	Integer queryUserCount(User user, Integer roleId);
+	/**
+	 * 注册新用户
+	 * @param newuser
+	 * @return
+	 */
+	int saveUser(User newuser);
 }

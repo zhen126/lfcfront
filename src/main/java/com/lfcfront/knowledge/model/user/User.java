@@ -6,6 +6,7 @@ public class User {
 	private int id;
 	private String username;
 	private String password;
+	private String code;
 	private List<Role> roleList;// 对应角色集合，一个用户可以有多重角色
 	private String actualName;// 实际姓名
 	private String sex;
@@ -101,6 +102,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 }

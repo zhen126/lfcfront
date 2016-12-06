@@ -129,4 +129,9 @@ public class UsersServiceImpl implements IUserService {
 		condition.put("user", user);
 		return userMapper.queryUserCount(condition);
 	}
+
+	@Override
+	public int saveUser(User newuser) {
+		return userMapper.saveUser(newuser);
+	}
 }

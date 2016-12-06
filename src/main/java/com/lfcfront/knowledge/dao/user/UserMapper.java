@@ -98,4 +98,12 @@ public interface UserMapper {
 	 * @param roleId
 	 */
 	void insertUserRole(int userId, int roleId);
+	
+	/**
+	 * 注册新用户
+	 * 
+	 * @param userId
+	 * @param roleId
+	 */
+	int saveUser(User user);
 }

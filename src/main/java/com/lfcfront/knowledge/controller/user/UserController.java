@@ -22,7 +22,7 @@ import com.lfcfront.knowledge.model.user.User;
 import com.lfcfront.knowledge.service.user.IUserService;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/")
 public class UserController {
 
 	@Autowired
@@ -32,30 +32,115 @@ public class UserController {
 	private UserMapper userMapper;
 
 	Logger log = Logger.getLogger(UserController.class);
-
+/**
+ * 登录接口
+ * @param request
+ * @param username
+ * @param password
+ * @param session
+ * @return
+ */
 	@ResponseBody
-	@RequestMapping(value = "/login.do")
+	@RequestMapping(value = "login")
 	public Map<String, Object> login(HttpServletRequest request,
 			String username, String password, HttpSession session) {
 		User user = userService.queryUserByUsername(username);
 		Map<String, Object> result = new HashMap<String, Object>();
 		String msg = null;
-		int state = 0;
-		if (user == null) {
+		int state = 10;
+		if (user != null) {
+			if (user.getUsername().equals(username)
+					&& user.getPassword().equals(password)) {
+				state = 0;
+				msg = "登录成功！";
+				session.setAttribute("user", user);
+			} else{
+				state = 1;
+				msg = "用户名或者密码错误 ！";
+			}
+		} else{
 			state = 1;
-			msg = "用户不存在。";
-		} else if (!password.equals(user.getPassword())) {
-			state = 2;
-			msg = "密码错误，请重新输入。";
+			msg = "用户名或者密码错误 ！";
+		}
+				/*state = -1;
+				msg = "系统错误！";*/
+		result.put("state", state);
+		result.put("msg", msg);
+		return result;
+	}
+	/**
+	 * 注册-校验用户名是否存在接口
+	 * @param request
+	 * @param username
+	 * @param session
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "checkUser")
+	public Map<String, Object> checkUser(HttpServletRequest request,
+			String username,HttpSession session) {
+		User user = userService.queryUserByUsername(username);
+		Map<String, Object> result = new HashMap<String, Object>();
+		String msg = null;
+		int state = 10;
+		if (user != null) {
+				state = 0;
+				msg = "用户名已存在！";
 		} else {
-			msg = "验证成功！";
-			session.setAttribute("user", user);
+			state = 1;
+			msg = "用户名不存在！";
+		}
+		/*state = -1;
+		msg = "系统错误！";*/
+		result.put("state", state);
+		result.put("msg", msg);
+		return result;
+	}
+	/**
+	 * 注册动作
+	 * @param request
+	 * @param username
+	 * @param password
+	 * @param code
+	 * @param session
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "regist")
+	public Map<String, Object> regist(HttpServletRequest request,
+			String username, String password,String code,HttpSession session) {
+		User user = userService.queryUserByUsername(username);
+		Map<String, Object> result = new HashMap<String, Object>();
+		String msg = null;
+		int state = 10;
+		if (username != null && password != null && code != null) {
+			if (user == null && "3321".equals(code)) {
+				state = 0;
+				msg = "注册成功！";
+				User newuser = new User();
+				newuser.setUsername(username);
+				newuser.setPassword(password);
+				userService.saveUser(newuser);
+			} else if (user == null && !"3321".equals(code)) {
+				state = 2;
+				msg = "验证码错误！";
+			} else if (user != null) {
+				state = 1;
+				msg = "用户名已存在！";
+			}
+		} else if (username == null || password == null || code == null) {
+			state = 3;
+			msg = "缺少必输项！";
+		} else {
+			state = -1;
+			msg = "系统错误！";
 		}
 		result.put("state", state);
 		result.put("msg", msg);
 		return result;
 	}
-
+	
+	
 	/**
 	 * 用户退出
 	 * 

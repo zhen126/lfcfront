@@ -43,11 +43,9 @@
 		<!-- where -->
 		<!-- a.username = -->
 		<!-- #{username} -->
-		select a.*,b.actual_name actualName,b.sex,b.mobile,b.email,b.address,b.remark from
-		user_login a,user_profile b where
-		a.username = #{username} and
-		a.delete_flag = 0
-		and a.id = b.user_id
+		select a.id,a.username,a.password,a.delete_flag as "deleteFlag" from
+		user a 
+		where a.delete_flag = 0 and username=#{username}
 	</select>
 
 	<!-- 查询所有用户的数量 -->
@@ -201,5 +199,9 @@
 		insert into user_role (user_id,role_id) values
 		(#{0},#{1})
 	</insert>
-
+	<!-- 注册新用户 -->
+	<insert id="saveUser" parameterType="com.lfcfront.knowledge.model.user.User">
+		insert into user (username,password,delete_flag) values
+		(#{username},#{password},0)
+	</insert>
 </mapper> 

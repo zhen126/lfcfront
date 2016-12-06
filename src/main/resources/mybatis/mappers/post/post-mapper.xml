@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC   
+    "-//mybatis.org//DTD Mapper 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lfcfront.knowledge.dao.post.PostMapper">
+	<!-- 分页查询帖子列表-->
+	<select id="queryPostList" resultType="java.util.Map" parameterType="java.util.Map">
+		select p.id,p.title,p.time,p.content,u.username as "author" 
+        from post p left join user u on u.id=p.user_id 
+        where p.delete_flag=0 limit 
+		#{page_start},#{page_capacity}
+	</select>
+	<!-- 查询帖子总数-->
+	<select id="queryPostCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+		select count(p.id)
+        from post p 
+        where p.delete_flag=0 
+	</select>
+	<!-- 根据帖子ID查询tag -->
+	<select id="queryPostTag" resultType="java.util.Map" parameterType="java.lang.String" >
+		 select u.tag_name as "tagName"      
+         from post_tag_rel p left join 
+         tag u on p.tag_id=u.id 
+         where p.post_id=#{id}
+	</select>
+	<!-- 根据帖子ID查询帖子基本信息 -->
+		<select id="queryPostInfo" resultType="java.util.Map" parameterType="java.util.Map">
+		select p.id,p.title,p.time,p.content,u.username as "author" 
+        from post p left join user u on u.id=p.user_id 
+        where p.delete_flag=0 and p.id=#{id}
+	</select>
+	
+	<!-- 查询Tag表最大Id -->
+		<select id="queryMaxTagID" resultType="java.lang.String" >
+		select max(t.id)
+        from tag t
+	</select>
+	<!-- 查询Post表最大Id -->
+		<select id="queryMaxPostID" resultType="java.lang.String" >
+		select max(t.id)
+        from post t
+	</select>
+	<!-- 根据帖子Name查询帖子Id -->
+		<select id="queryTagByName" resultType="java.lang.String" parameterType="java.lang.String">
+		select t.id
+        from tag t
+        where t.delete_flag=0 and t.tag_name=#{_parameter}
+	</select>
+	<!--添加Post表信息  -->
+	<insert id="addPost" parameterType="java.util.Map">
+		INSERT into post (
+		<trim suffixOverrides=",">
+		    <if test="id != null ">id,</if>
+			<if test="title != null ">title,</if>
+			<if test="userid != null ">user_id,</if>
+			<if test="time != null ">time,</if>
+			<if test="content != null ">content,</if>
+			delete_flag
+		</trim>
+		)VALUES(
+		<trim suffixOverrides=",">
+		    <if test="id != null ">#{id},</if>
+			<if test="title != null ">#{title},</if>
+			<if test="userid != null ">#{userid},</if>
+			<if test="time != null ">#{time},</if>
+			<if test="content != null ">#{content},</if>
+			0
+		</trim>
+		)
+	</insert>
+	<!-- 添加Post_tag_rel表 信息 -->
+	<insert id="addPost_t_r" parameterType="java.util.Map">
+		INSERT into post_tag_rel (
+		<trim suffixOverrides=",">
+			<if test="tagid != null ">tag_id,</if>
+			<if test="postid != null ">post_id,</if>
+		</trim>
+		)VALUES(
+		<trim suffixOverrides=",">
+			<if test="tagid != null ">#{tagid},</if>
+			<if test="postid != null ">#{postid},</if>
+		</trim>
+		)
+	</insert>
+	<!-- 添加Tab表信息 -->
+		<insert id="addTag" parameterType="java.util.Map" >
+		INSERT into tag (
+		    <if test="id != null ">id,</if>
+			<if test="tag != null ">tag_name,</if>
+			delete_flag
+		)VALUES(
+		    <if test="id != null ">#{id},</if>
+			<if test="tag != null ">#{tag},</if>
+			0
+		)
+	</insert>
+	<!-- 更新post表 -->
+	<update id="updatePostInfo"  parameterType="java.util.Map">
+ 		update post SET
+ 		id=#{id},
+ 		<trim suffixOverrides=",">
+ 		<if test="title != null ">title= #{title},</if> 
+ 		<if test="time != null ">time=#{time},</if> 
+ 		<if test="content != null ">content=#{content},</if> 
+ 		</trim>
+ 		where id=#{id}
+	</update>
+	
+	<!-- 根据帖子ID查询评论信息 -->
+		<select id="queryPostComment" resultType="java.util.Map" parameterType="java.lang.String">
+		  select c.id,c.comment,u.username as "c_author",c.post_id as "postId",c.time as "c_time" from 
+          comment c LEFT JOIN user u on u.id=c.author_id
+          where c.delete_flag=0 and c.post_id=#{id}
+	</select>
+	<!-- 删除帖子基本信息 -->
+	<delete id="deletePost" parameterType="java.lang.String">
+		delete from
+		post where id = #{id}
+	</delete>
+	<!-- 删除帖子关联的tag -->
+	<delete id="deletePostTag" parameterType="java.lang.String">
+		delete from
+		post_tag_rel where post_id = #{id}
+	</delete>
+	<!-- 删除帖子关联的comment -->
+		<delete id="deletePostComment" parameterType="java.lang.String">
+		delete from
+		comment where post_id = #{id}
+	</delete>
+		<!-- 分页查询我的帖子数-->
+	<select id="queryPostListByAuthor" resultType="java.util.Map" parameterType="java.util.Map">
+		select p.id,p.title,p.time,p.content,u.username as "author" 
+        from post p left join user u on u.id=p.user_id 
+        where p.delete_flag=0 and p.user_id=#{id} limit 
+		#{page_start},#{page_capacity}
+	</select>
+		<!-- 查询我的帖子总数-->
+	<select id="queryPostByAuthorCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+		select count(p.id)
+        from post p 
+        where p.delete_flag=0 and p.user_id=#{id}
+	</select>
+	<!-- tag列表-->
+	<select id="queryTagList" resultType="java.util.Map" parameterType="java.util.Map">
+		select id as "tagId",tag_name as "tagName" 
+		from tag t 
+		where t.delete_flag=0
+	</select>
+			<!-- 查询tag总数-->
+	<select id="queryTagCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+		select count(p.id)
+        from tag p 
+        where p.delete_flag=0 
+	</select>
+</mapper> 
