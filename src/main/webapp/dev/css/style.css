@@ -725,3 +725,15 @@ transition: all .3s; background-color: #2C36C9;}
 cursor:pointer; color:#fff; border-radius:2px;padding:0px 15px;
 }
 .tag-tip{line-height:24px;}
+/* 弹出窗 */
+.pop-mask{width: 100%;height:100%;position: fixed;top:0;left: 0;background: rgba(0,0,0,.6);z-index: 10000; display: none;}
+.pop-box{width:400px;top:18%;background-color: #fff;
+	position: fixed; left: 50%;-webkit-transform: translate(-50%,0);
+	transform: translate(-50%,0);padding:10px;
+	
+box-sizing: border-box; border-radius: 10px;
+ }
+ .pop-close{float: right; cursor: pointer;}
+ .pop-content{padding:20px 10px;}
+ .pop-content p{text-align: center; color: #444;}
+ .pop-top{border-bottom: 1px solid #777;padding-bottom: 10px;}

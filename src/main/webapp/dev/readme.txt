@@ -10,7 +10,10 @@ font
 img
 	存放图片
 include
-	存放头部和尾部公共的部分
+	存放meta:包含title标签,reset.css,style.css,jquery(3.1版本)
+	存放公共头部：header.html
+	存放公共尾部：footer.html
+
 js
 	common/ 存放我们自己用的或者写的js,
 			注意：

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 @@include('../include/meta.html')
+	<script src="../js/common/jquery-movebg.js"></script>
+	<script src="../js/common/global.js"></script>
+</head>
+<body>
+	<!-- 头部 -->
+	@@include('../include/header.html')
+
+	<!--内容开始 -->
+
+	<!-- 内容 -->
+	<div class="content">
+
+		<!-- 左 -->
+		<div class="content_left">
+			
+			<div class="post">
+				<div class="title">
+					<h2>发新帖</h2>
+				</div>
+				<table>
+					<tr>
+						<td width="10%" style="white-space:nowrap;">标题：</td>
+						<td>
+							
+							<input type="text" id="postTitle" placeholder="请输入标题" >
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a href="#"><i class="iconfont icon-toupiaotie"></i> 添加投票</a></td>
+					</tr>
+					<tr>
+						<td style="white-space:nowrap;">内容：</td>
+						<td>
+							<!-- 加载编辑器的容器 -->
+							<script id="container" name="content" type="text/plain">请输入问题</script>
+							<!-- 配置文件 -->
+							<script type="text/javascript" src="../js/lib/ueditor/ueditor.config.js"></script>
+							<!-- 编辑器源码文件 -->
+							<script type="text/javascript" src="../js/lib/ueditor/ueditor.all.js"></script>
+							<!-- 实例化编辑器 -->
+							<script type="text/javascript">
+								var ue = UE.getEditor('container',{
+									toolbars: [["fullscreen","bold","underline","strikethrough","insertunorderedlist","insertorderedlist","blockquote","link","source","insertimage"]],
+									initialFrameWidth :800,
+									initialFrameHeight:250,autoHeightEnabled:false});
+								</script> 
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a href="#" id="getTextarea"><button>提交</button></a></td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+
+			<!-- 右 -->
+			<div class="content_right">
+
+				<!-- 动态 -->
+				<div class="news_right">
+					<div class="news_right_title">动态</div>
+					<span></span>
+					<div class="news_right_list">	
+						<ul>
+							<li>
+								<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等和剂局方回复回复大将风度很久很久好地方</a>
+								<p><span>武大郎</span>发起了提问</p>
+							</li>
+							<li>
+								<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等</a>
+								<p><span>武大郎</span>回复了问题</p>
+							</li>
+							<li>
+								<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等</a>
+								<p><span>武大郎</span>发起了提问</p>
+							</li>
+							<li>
+								<a href="post_info.html" title="">请问larave权限管理怎么做！在线急等</a>
+								<p><span>武大郎</span>回复了问题</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 标签 -->
+				<div class="news_right">
+					<div class="news_right_title">标签</div>
+					<div class="clear">
+						<input typpe="text" id="txtTag" >
+						<input type="button" id="addTagBtn" value="添加">
+					</div>
+
+					<p class="tag-tip">以&nbsp;,&nbsp;隔开，添加多个标签，添加后按enter</p>
+					<div id="boxTag" class="clear"></div>
+
+				</div>
+				<div>
+
+				</div>
+			</div>
+		</div>
+
+		<!--内容结束 -->
+
+
+		<!-- 尾部 -->
+		@@include('../include/footer.html')
+
+		<!-- 提示框 -->
+		<div class="pop-mask">
+			<div class="pop-box">
+			<div class="clear pop-top">
+				<span class="pop-close">&#10006;</span>
+			</div>
+			<div class="pop-content">
+				<p>提交成功！</p>
+			</div>
+			</div>
+		</div>
+		
+		<script src="../js/common/addPost.js"></script>
+
+	</body>
+	</html>
