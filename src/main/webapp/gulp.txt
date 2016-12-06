@@ -1,0 +1,8 @@
+gulp 的使用
+命令行进入webapp目录下，npm install 下载依赖
+
+开发是gulp 执行默认任务，浏览器输入localhost:8081  即可以看到index页面
+代码css  js的修改会自动反映到浏览器。
+
+如果开发完成需要打包  执行 gulp build
+会将代码压缩 在dist目录下

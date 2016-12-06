@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .page{
+            list-style: none;
+        }
+        .page li:first-child{
+            float:left;
+        }
+        .page li:last-child{
+            float:right;
+        }
+        .page a{
+            text-decoration:none;
+            color:#e4393c;
+        }
+        .page a:hover{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+<ul class="page"></ul>
+<script src="../js/jquery.min.js"></script>
+<script src="../../dev/js/lib/mock.js"></script>
+<script>
+    // 使用 Mock
+    Mock.mock('http://localhost:8080/lfcfront/postDetail', {
+        'pre_post': [{
+            'id':214,
+            'title':'啊啊啊啊啊'
+        }],
+        'next_post': [{
+            'id':216,
+            'title':'咿呀咿呀咿呀'
+        }]
+    });
+    $.ajax({
+          url: 'http://localhost:8080/lfcfront/postDetail',
+          dataType: 'json',
+          success: function (data) {
+              var content1 = "";
+              var content2 ="";
+              if (data != null) {
+                  for (var i = 0; i < data.pre_post.length; i++) {
+                      content1 += '<li><a href="#">上一篇</a>&nbsp;<span>' + data.pre_post.title + '</span></li>';
+                  }
+                  for (var i = 0; i < data.next_post.length; i++) {
+                      content2 += '<li><a href ="#">下一篇</a>&nbsp;<span>' + data.next_post.title + '</span></li>';
+                  }
+              }
+          $(".page").append(content1);
+          $(".page").append(content2);
+          }
+    });
+</script>
+</body>
+</html>
